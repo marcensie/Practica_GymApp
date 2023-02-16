@@ -135,45 +135,11 @@ fun ExercisePage(/*navController: NavController*/) {
 
        back_button()
 
-//exercise data
-        Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.TopCenter) {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Image(
-                    painter = painterResource(id = R.drawable.push_up),
-                    contentDescription = "push up image",
-                    modifier = Modifier.size(400.dp)
-                )
-                //navigation through exercises
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Image(
-                        painter = painterResource(id = R.drawable.back_b),
-                        contentDescription = "left image",
-                        modifier = Modifier
-                            .size(50.dp)
-                            .weight(1f)
-                    )
-                    Text(
-                        text = "Push Ups",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 30.sp
-                    )
-                    Image(
-                        painter = painterResource(id = R.drawable.next_b),
-                        contentDescription = "right image",
-                        modifier = Modifier
-                            .size(50.dp)
-                            .weight(1f)
-                    )
-                }
-                //navigation through exercises end
-                Text(
-                    text = "30",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 25.sp
-                )
-            }
-        }
-//exercise data end
+        exercise(
+            imageId = R.drawable.push_up,
+            title = "Push Ups",
+            number = "30",
+            ContDesc = "push up image")
 
         //timer
         Column(
@@ -361,6 +327,47 @@ fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: Str
                 text = "\n$title",
                 fontSize = 25.sp,
                 color = Color.White
+            )
+        }
+    }
+}
+
+@Composable
+fun exercise(imageId: Int,title: String,number: String,ContDesc: String) {
+    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.TopCenter) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(id = imageId),
+                contentDescription = ContDesc,
+                modifier = Modifier.size(400.dp)
+            )
+            //navigation through exercises
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    painter = painterResource(id = R.drawable.back_b),
+                    contentDescription = "left image",
+                    modifier = Modifier
+                        .size(50.dp)
+                        .weight(1f)
+                )
+                Text(
+                    text = "$title",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 30.sp
+                )
+                Image(
+                    painter = painterResource(id = R.drawable.next_b),
+                    contentDescription = "right image",
+                    modifier = Modifier
+                        .size(50.dp)
+                        .weight(1f)
+                )
+            }
+            //navigation through exercises end
+            Text(
+                text = "$number",
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp
             )
         }
     }
