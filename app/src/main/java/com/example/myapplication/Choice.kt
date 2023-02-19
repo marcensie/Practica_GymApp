@@ -42,7 +42,7 @@ fun Choicep(navController: NavHostController){
             .fillMaxSize(),
     ) {
 
-        topbar()
+        topbar(navController =  navController)
 
         Box(
             modifier = Modifier
@@ -86,7 +86,7 @@ fun Choicep(navController: NavHostController){
 
 
 @Composable
-fun topbar() {
+fun topbar(navController:NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -118,6 +118,7 @@ fun topbar() {
                     painter = painterResource(id = R.drawable.profile),
                     contentDescription = "profile",
                     modifier = Modifier.size(50.dp)
+                        .clickable(onClick = { navController.navigate(route = NavRoute.Exercisep.route) })
                 )
             }
         }
@@ -125,7 +126,7 @@ fun topbar() {
 }
 
 @Composable
-fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: String,navController:NavController/*onClick: () -> Unit*/) {
+fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: String,navController:NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth()

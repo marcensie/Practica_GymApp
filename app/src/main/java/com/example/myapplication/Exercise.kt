@@ -50,7 +50,7 @@ fun Exercisep(navController: NavController) {
             .background(Color(0xFFE7E7E7))
             .fillMaxSize(),
     ) {
-        topbar()
+        topbar(navController =  navController)
 
        back_button(navController =  navController)
 
