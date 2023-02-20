@@ -127,9 +127,9 @@ fun exercise(imageId: Int,title: String,number: String,ContDesc: String) {
 @Composable
 fun timer(totalTime: Long){
 Column(
-modifier = Modifier.fillMaxSize(),
-horizontalAlignment = Alignment.CenterHorizontally
-){
+          modifier = Modifier.fillMaxSize(),
+             horizontalAlignment = Alignment.CenterHorizontally
+          ){
     Box(modifier = Modifier.size(200.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -218,3 +218,9 @@ horizontalAlignment = Alignment.CenterHorizontally
     }
 }
 }
+
+
+
+
+
+

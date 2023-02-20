@@ -57,28 +57,32 @@ fun Choicep(navController: NavHostController){
                     title = "FULL BODY\n WORKOUT",
                     colors = listOf(Color(0xFFA39EC2), Color(0xFF3313FC)),
                     ContDesc = "image1",
-                    navController =  navController
+                    navController =  navController,
+                    route = NavRoute.Fullbodyp.route
                 )
                 workout_type(
                     imageId = R.drawable.arm,
                     title = "     ARM\n WORKOUT",
                     colors = listOf(Color(0xFF31286A), Color(0xFF05040B)),
                     ContDesc = "image2",
-                    navController =  navController
+                    navController =  navController,
+                    route = NavRoute.Armp.route
                 )
                 workout_type(
                     imageId = R.drawable.back,
                     title = "     BACK\n WORKOUT",
                     colors = listOf(Color(0xFFA15429), Color(0xFF3A6690)),
                     ContDesc = "image3",
-                    navController =  navController
+                    navController =  navController,
+                    route = NavRoute.Backp.route
                 )
                 workout_type(
                     imageId = R.drawable.leg,
                     title = "      LEG\n WORKOUT",
                     colors = listOf(Color(0xFF283835), Color(0xFF265374)),
                     ContDesc = "image4",
-                    navController =  navController
+                    navController =  navController,
+                    route = NavRoute.Legp.route
                 )
             }
         }
@@ -127,7 +131,7 @@ fun topbar(navController:NavController) {
 }
 
 @Composable
-fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: String,navController:NavController) {
+fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: String,navController:NavController,route: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -138,7 +142,7 @@ fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: Str
         Box(
             modifier = Modifier
                 .size(200.dp)
-                .clickable(onClick = { navController.navigate(route = NavRoute.Exercisep.route) })
+                .clickable(onClick = { navController.navigate(route = route) })
                 .background(
                     brush = Brush.verticalGradient(
                         colors = colors
