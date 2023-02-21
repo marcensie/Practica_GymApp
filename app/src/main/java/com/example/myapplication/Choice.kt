@@ -21,6 +21,7 @@ import androidx.compose.runtime.*
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.core.os.bundleOf
@@ -35,7 +36,6 @@ import androidx.navigation.compose.rememberNavController
 //fun Choicepage(){
 //    Choicep(navController =  rememberNavController())
 //}
-
 
 @Composable
 fun Choicep(navController: NavHostController){
@@ -69,7 +69,8 @@ fun Choicep(navController: NavHostController){
                     colors = listOf(Color(0xFF31286A), Color(0xFF05040B)),
                     ContDesc = "image2",
                     navController =  navController,
-                    route = NavRoute.Armp.route
+                    route = NavRoute.Fullbodyp.route
+                    //route = NavRoute.Armp.route
                 )
                 workout_type(
                     imageId = R.drawable.back,
@@ -77,7 +78,8 @@ fun Choicep(navController: NavHostController){
                     colors = listOf(Color(0xFFA15429), Color(0xFF3A6690)),
                     ContDesc = "image3",
                     navController =  navController,
-                    route = NavRoute.Backp.route
+                    route = NavRoute.Fullbodyp.route
+                   //route = NavRoute.Backp.route
                 )
                 workout_type(
                     imageId = R.drawable.leg,
@@ -85,7 +87,8 @@ fun Choicep(navController: NavHostController){
                     colors = listOf(Color(0xFF283835), Color(0xFF265374)),
                     ContDesc = "image4",
                     navController =  navController,
-                    route = NavRoute.Legp.route
+                    route = NavRoute.Fullbodyp.route
+                   // route = NavRoute.Legp.route
                 )
             }
         }
@@ -145,8 +148,14 @@ fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: Str
         Box(
             modifier = Modifier
                 .size(200.dp)
-                .clickable(onClick = { navController.navigate(route = route)})
-                //.clickable(onClick = { navController.navigate(route = route,arguments = bundleOf("imageId" to imageId)) })
+                .clickable(onClick = {
+                    when (title) {
+                        "FULL BODY\n WORKOUT" -> Globals.imagid = 1
+                        "     ARM\n WORKOUT" -> Globals.imagid = 2
+                        "     BACK\n WORKOUT" -> Globals.imagid = 3
+                        "      LEG\n WORKOUT" -> Globals.imagid = 4
+                    }
+                    navController.navigate(route = route)})
                 .background(
                     brush = Brush.verticalGradient(
                         colors = colors
@@ -168,3 +177,36 @@ fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: Str
     }
 }
 
+@Composable
+fun top_image(imageId: Int, title: String,colors: List<Color> , ContDesc: String,navController:NavController/*,route: String*/) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 10.dp, start = 19.dp, end = 19.dp),
+        shape = RoundedCornerShape(5.dp),
+        elevation = 5.dp
+    ) {
+        Box(
+            modifier = Modifier
+                .size(200.dp)
+                .clickable(onClick = { navController.navigate(route = NavRoute.Choicep.route)})
+                .background(
+                    brush = Brush.verticalGradient(
+                        colors = colors
+                    )
+                )
+        ) {
+            Image(
+                painter = painterResource(id = imageId),
+                contentDescription = ContDesc,
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop
+            )
+            Text(
+                text = "\n$title",
+                fontSize = 25.sp,
+                color = Color.White
+            )
+        }
+    }
+}
