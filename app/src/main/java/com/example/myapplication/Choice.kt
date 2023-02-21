@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.os.Bundle
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -22,8 +23,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.rememberNavController
 
 
@@ -123,7 +126,7 @@ fun topbar(navController:NavController) {
                     painter = painterResource(id = R.drawable.profile),
                     contentDescription = "profile",
                     modifier = Modifier.size(50.dp)
-                        .clickable(onClick = { navController.navigate(route = NavRoute.Exercisep.route) })
+                        .clickable(onClick = { navController.navigate(route = NavRoute.Profilep.route) })
                 )
             }
         }
@@ -142,7 +145,8 @@ fun workout_type(imageId: Int, title: String,colors: List<Color> , ContDesc: Str
         Box(
             modifier = Modifier
                 .size(200.dp)
-                .clickable(onClick = { navController.navigate(route = route) })
+                .clickable(onClick = { navController.navigate(route = route)})
+                //.clickable(onClick = { navController.navigate(route = route,arguments = bundleOf("imageId" to imageId)) })
                 .background(
                     brush = Brush.verticalGradient(
                         colors = colors

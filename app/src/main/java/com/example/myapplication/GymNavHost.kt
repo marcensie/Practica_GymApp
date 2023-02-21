@@ -12,6 +12,8 @@ sealed class NavRoute(val route: String){
     object Armp:NavRoute("arm_page")
     object Backp:NavRoute("back_page")
     object Legp:NavRoute("leg_page")
+    object Profilep:NavRoute("profile_page")
+    object Bmip:NavRoute("bmi_page")
 }
 
 @Composable
@@ -24,5 +26,7 @@ fun GymNavHost (){
         composable(NavRoute.Armp.route){ Armp(navController = navController)}
         composable(NavRoute.Backp.route){ Backp(navController = navController)}
         composable(NavRoute.Legp.route){ Legp(navController = navController)}
+        composable(NavRoute.Profilep.route){ Profilep(navController = navController)}
+        composable(NavRoute.Bmip.route){ Bmip(navController = navController)}
     }
 }
