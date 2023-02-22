@@ -18,7 +18,7 @@ import com.example.myapplication.NavRoute
 import com.example.myapplication.R
 
 @Composable
-fun topbar(navController: NavController) {
+fun Topbar(navController: NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -50,7 +50,8 @@ fun topbar(navController: NavController) {
                     painter = painterResource(id = R.drawable.profile),
                     contentDescription = "profile",
                     modifier = Modifier.size(50.dp)
-                        .clickable(onClick = { navController.navigate(route = NavRoute.ProfileScreen.route) })
+                        .clickable(onClick = { navController.navigate(
+                            route = NavRoute.ProfileScreen.route) })
                 )
             }
         }

@@ -1,4 +1,4 @@
-package com.example.myapplication.Exercise.components
+package com.example.myapplication.Exercise.Components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,7 +18,7 @@ import com.example.myapplication.NavRoute
 import com.example.myapplication.R
 
 @Composable
-fun back_button(navController: NavController) {
+fun Back_button(navController: NavController) {
     Box(
         modifier = Modifier
             .size(50.dp)

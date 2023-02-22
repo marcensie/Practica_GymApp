@@ -1,44 +1,30 @@
 package com.example.myapplication.Fullbody
 
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.myapplication.Choice.components.Globals
-import com.example.myapplication.Fullbody.Components.*
+import com.example.myapplication.Exercise.Components.Topbar
 import com.example.myapplication.R
+import com.example.myapplication.Fullbody.components.Day_box
+import com.example.myapplication.Fullbody.components.Day_box_rest
+import com.example.myapplication.Fullbody.components.Day_box_start
+import com.example.myapplication.Fullbody.components.Top_image
 
 @Composable
 fun FullbodyScreen(navController: NavController) {
 
- var imgid : Int = 0
- var ttl : String = "0"
-    var cdes : String = "0"
+ var imgid = 0
+ var ttl = "0"
+    var cdes = "0"
    var clrs: List<Color> = listOf(Color(0xFFA39EC2), Color(0xFF3313FC))
 
     Column(
@@ -48,31 +34,34 @@ fun FullbodyScreen(navController: NavController) {
         )
         {
             //////////////
-            if (Globals.imagid == 1) {
+            when (Globals.imagid) {
+                1 -> {
                     imgid = R.drawable.full_body
                     ttl = stringResource(id = R.string.fbw)
                     cdes = "image1"
-                    clrs = listOf(Color(0xFFA39EC2), Color(0xFF3313FC))}
-    else if (Globals.imagid == 2) {
-        imgid = R.drawable.arm
-                ttl = stringResource(id = R.string.armw)
-                cdes = "image2"
-                clrs = listOf(Color(0xFF31286A), Color(0xFF05040B))
+                    clrs = listOf(Color(0xFFA39EC2), Color(0xFF3313FC))
                 }
-    else if (Globals.imagid == 3) {
-        imgid = R.drawable.back
-                ttl = stringResource(id = R.string.bcw)
-                cdes = "image3"
-                clrs = listOf(Color(0xFFA15429), Color(0xFF3A6690))
+                2 -> {
+                    imgid = R.drawable.arm
+                    ttl = stringResource(id = R.string.armw)
+                    cdes = "image2"
+                    clrs = listOf(Color(0xFF31286A), Color(0xFF05040B))
                 }
-    else if (Globals.imagid == 4) {
-        imgid = R.drawable.leg
-                ttl = stringResource(id = R.string.legw)
-                cdes = "image4"
-                clrs = listOf(Color(0xFF283835), Color(0xFF265374))
-    }
+                3 -> {
+                    imgid = R.drawable.back
+                    ttl = stringResource(id = R.string.bcw)
+                    cdes = "image3"
+                    clrs = listOf(Color(0xFFA15429), Color(0xFF3A6690))
+                }
+                4 -> {
+                    imgid = R.drawable.leg
+                    ttl = stringResource(id = R.string.legw)
+                    cdes = "image4"
+                    clrs = listOf(Color(0xFF283835), Color(0xFF265374))
+                }
+            }
             /////////////////////
-            topbar(navController =  navController)
+            Topbar(navController =  navController)
             Column(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
                 modifier = Modifier.verticalScroll(
@@ -80,7 +69,7 @@ fun FullbodyScreen(navController: NavController) {
                 )
             ) {
 
-                top_image(
+                Top_image(
                     imageId = imgid,
                     //imageId = R.drawable.full_body,
                     title = ttl,
@@ -88,7 +77,8 @@ fun FullbodyScreen(navController: NavController) {
                     ContDesc = cdes,
                     navController =  navController,
                 )
-                Day_box_start(dayText = "Day 1", exerciseText = "9 Exercises",navController =  navController)
+                Day_box_start(dayText = "Day 1", exerciseText = "9 Exercises",
+                    navController =  navController)
                 Day_box(dayText = "Day 2", exerciseText = "9 Exercises")
                 Day_box(dayText = "Day 3", exerciseText = "8 Exercises")
                 Day_box_rest(dayText = "Day 4", exerciseText = "Rest Day")

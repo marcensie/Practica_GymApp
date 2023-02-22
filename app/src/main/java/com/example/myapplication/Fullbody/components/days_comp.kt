@@ -1,4 +1,4 @@
-package com.example.myapplication.Fullbody.Components
+package com.example.myapplication.Fullbody.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -23,7 +23,7 @@ import com.example.myapplication.NavRoute
 import com.example.myapplication.R
 
 @Composable
-fun topbar(navController: NavController) {
+fun Topbar(navController: NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -55,7 +55,8 @@ fun topbar(navController: NavController) {
                     painter = painterResource(id = R.drawable.profile),
                     contentDescription = "profile",
                     modifier = Modifier.size(50.dp)
-                        .clickable(onClick = { navController.navigate(route = NavRoute.ProfileScreen.route) })
+                        .clickable(onClick = { navController.navigate(
+                            route = NavRoute.ProfileScreen.route) })
                 )
             }
         }
@@ -64,7 +65,8 @@ fun topbar(navController: NavController) {
 
 
 @Composable
-fun top_image(imageId: Int, title: String, colors: List<Color>, ContDesc: String, navController:NavController/*,route: String*/) {
+fun Top_image(imageId: Int, title: String, colors: List<Color>, ContDesc: String,
+              navController:NavController/*,route: String*/) {
     Card(
         modifier = Modifier
             .fillMaxWidth()

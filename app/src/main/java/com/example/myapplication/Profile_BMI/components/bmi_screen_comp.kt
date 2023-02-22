@@ -225,7 +225,8 @@ fun MyProfilePageBarr(navController: NavController){
                     title = { Text("")
                     },
                     navigationIcon = {
-                        IconButton(onClick = {navController.navigate(route = NavRoute.ProfileScreen.route)}){
+                        IconButton(onClick = {navController.navigate(
+                            route = NavRoute.ProfileScreen.route)}){
                             Icon(imageVector = Icons.Filled.ArrowBack,contentDescription = "")
                         }
                     },

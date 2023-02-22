@@ -20,7 +20,7 @@ import com.example.myapplication.NavRoute
 import com.example.myapplication.R
 
 @Composable
-fun topbar(navController: NavController) {
+fun Topbar(navController: NavController) {
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -52,7 +52,8 @@ fun topbar(navController: NavController) {
                     painter = painterResource(id = R.drawable.profile),
                     contentDescription = "profile",
                     modifier = Modifier.size(50.dp)
-                        .clickable(onClick = { navController.navigate(route = NavRoute.ChoiceScreen.route) })
+                        .clickable(onClick = { navController.navigate(
+                            route = NavRoute.ChoiceScreen.route) })
                 )
             }
         }
@@ -60,7 +61,8 @@ fun topbar(navController: NavController) {
 }
 
 @Composable
-fun Button_model(iconId: Int, description:String, text: String, navController: NavController, route:String){
+fun Button_model(iconId: Int, description:String,text: String,
+                 navController: NavController,route:String){
     Card(
         modifier = Modifier
             .fillMaxWidth()

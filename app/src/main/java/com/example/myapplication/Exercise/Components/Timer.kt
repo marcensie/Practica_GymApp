@@ -1,4 +1,4 @@
-package com.example.myapplication.Exercise.components
+package com.example.myapplication.Exercise.Components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
@@ -28,7 +28,7 @@ import kotlin.math.cos
 import kotlin.math.sin
 
 @Composable
-fun timer(totalTime: Long){
+fun Timer(totalTime: Long){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
