@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="fbw">FULL BODY\n WORKOUT</string>
+    <string name="armw">"     "ARM\n WORKOUT</string>
+    <string name="bcw">"     "BACK\n WORKOUT</string>
+    <string name="legw">"      "LEG\n WORKOUT</string>
+    <string name="app_title">STRONG\n"   "MAN"</string>
 </resources>

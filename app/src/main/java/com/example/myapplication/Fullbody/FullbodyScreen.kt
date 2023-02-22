@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -49,24 +50,24 @@ fun FullbodyScreen(navController: NavController) {
             //////////////
             if (Globals.imagid == 1) {
                     imgid = R.drawable.full_body
-                    ttl = "FULL BODY\n WORKOUT"
+                    ttl = stringResource(id = R.string.fbw)
                     cdes = "image1"
                     clrs = listOf(Color(0xFFA39EC2), Color(0xFF3313FC))}
     else if (Globals.imagid == 2) {
         imgid = R.drawable.arm
-                ttl = "     ARM\n WORKOUT"
+                ttl = stringResource(id = R.string.armw)
                 cdes = "image2"
                 clrs = listOf(Color(0xFF31286A), Color(0xFF05040B))
                 }
     else if (Globals.imagid == 3) {
         imgid = R.drawable.back
-                ttl = "     BACK\n WORKOUT"
+                ttl = stringResource(id = R.string.bcw)
                 cdes = "image3"
                 clrs = listOf(Color(0xFFA15429), Color(0xFF3A6690))
                 }
     else if (Globals.imagid == 4) {
         imgid = R.drawable.leg
-                ttl = "      LEG\n WORKOUT"
+                ttl = stringResource(id = R.string.legw)
                 cdes = "image4"
                 clrs = listOf(Color(0xFF283835), Color(0xFF265374))
     }
@@ -86,8 +87,6 @@ fun FullbodyScreen(navController: NavController) {
                     colors = clrs,
                     ContDesc = cdes,
                     navController =  navController,
-                   // route = NavRoute.Choicep.route
-
                 )
                 Day_box_start(dayText = "Day 1", exerciseText = "9 Exercises",navController =  navController)
                 Day_box(dayText = "Day 2", exerciseText = "9 Exercises")

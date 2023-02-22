@@ -24,6 +24,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
@@ -61,7 +62,7 @@ fun ChoiceScreen(navController: NavHostController){
 
                 workout_type(
                     imageId = R.drawable.full_body,
-                    title = "FULL BODY\n WORKOUT",
+                    title = stringResource(id = R.string.fbw),
                     colors = listOf(Color(0xFFA39EC2), Color(0xFF3313FC)),
                     ContDesc = "image1",
                     navController =  navController,
@@ -69,30 +70,27 @@ fun ChoiceScreen(navController: NavHostController){
                 )
                 workout_type(
                     imageId = R.drawable.arm,
-                    title = "     ARM\n WORKOUT",
+                    title = stringResource(id = R.string.armw),
                     colors = listOf(Color(0xFF31286A), Color(0xFF05040B)),
                     ContDesc = "image2",
                     navController =  navController,
                     route = NavRoute.FullbodyScreen.route
-                    //route = NavRoute.Armp.route
                 )
                 workout_type(
                     imageId = R.drawable.back,
-                    title = "     BACK\n WORKOUT",
+                    title = stringResource(id = R.string.bcw),
                     colors = listOf(Color(0xFFA15429), Color(0xFF3A6690)),
                     ContDesc = "image3",
                     navController =  navController,
                     route = NavRoute.FullbodyScreen.route
-                   //route = NavRoute.Backp.route
                 )
                 workout_type(
                     imageId = R.drawable.leg,
-                    title = "      LEG\n WORKOUT",
+                    title = stringResource(id = R.string.legw),
                     colors = listOf(Color(0xFF283835), Color(0xFF265374)),
                     ContDesc = "image4",
                     navController =  navController,
                     route = NavRoute.FullbodyScreen.route
-                   // route = NavRoute.Legp.route
                 )
             }
         }
