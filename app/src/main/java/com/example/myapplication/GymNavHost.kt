@@ -4,29 +4,28 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.myapplication.Exercise.ExerciseScreen
+import com.example.myapplication.Choice.ChoiceScreen
+import com.example.myapplication.Fullbody.FullbodyScreen
+import com.example.myapplication.Profile.ProfileScreen
+import com.example.myapplication.Profile_BMI.BMI_prof_Screen
 
 sealed class NavRoute(val route: String){
-    object Choicep:NavRoute("choice_page")
-    object Exercisep:NavRoute("exercise_page")
-    object Fullbodyp:NavRoute("fullbody_page")
-//    object Armp:NavRoute("arm_page")
-//    object Backp:NavRoute("back_page")
-//    object Legp:NavRoute("leg_page")
-    object Profilep:NavRoute("profile_page")
-    object Bmip:NavRoute("bmi_page")
+    object ChoiceScreen:NavRoute("choice_screen")
+    object ExerciseScreen:NavRoute("exercise_screen")
+    object FullbodyScreen:NavRoute("fullbody_screen")
+    object ProfileScreen:NavRoute("profile_screen")
+    object BMI_prof_Screen:NavRoute("bmi_prof_screen")
 }
 
 @Composable
 fun GymNavHost (){
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = NavRoute.Choicep.route){
-        composable(NavRoute.Choicep.route){ Choicep(navController = navController)}
-        composable(NavRoute.Exercisep.route){ Exercisep(navController = navController)}
-        composable(NavRoute.Fullbodyp.route){ Fullbodyp(navController = navController)}
-//        composable(NavRoute.Armp.route){ Armp(navController = navController)}
-//        composable(NavRoute.Backp.route){ Backp(navController = navController)}
-//        composable(NavRoute.Legp.route){ Legp(navController = navController)}
-        composable(NavRoute.Profilep.route){ Profilep(navController = navController)}
-        composable(NavRoute.Bmip.route){ Bmip(navController = navController)}
+    NavHost(navController = navController, startDestination = NavRoute.ChoiceScreen.route){
+        composable(NavRoute.ChoiceScreen.route){ ChoiceScreen(navController = navController) }
+        composable(NavRoute.ExerciseScreen.route){ ExerciseScreen(navController = navController)}
+        composable(NavRoute.FullbodyScreen.route){ FullbodyScreen(navController = navController)}
+        composable(NavRoute.ProfileScreen.route){ ProfileScreen(navController = navController)}
+        composable(NavRoute.BMI_prof_Screen.route){ BMI_prof_Screen(navController = navController)}
     }
 }

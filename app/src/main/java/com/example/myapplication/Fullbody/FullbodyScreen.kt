@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.Fullbody
 
 
 import androidx.compose.foundation.Image
@@ -28,9 +28,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.myapplication.Choice.components.Globals
+import com.example.myapplication.Fullbody.Components.*
+import com.example.myapplication.R
 
 @Composable
-fun Fullbodyp(navController: NavController) {
+fun FullbodyScreen(navController: NavController) {
 
  var imgid : Int = 0
  var ttl : String = "0"
@@ -99,117 +102,4 @@ fun Fullbodyp(navController: NavController) {
 }
 
 
-@Composable
-fun Day_box_start(dayText : String, exerciseText:String, navController:NavController
-) {
-    Surface(modifier = Modifier
-        .fillMaxWidth()
-        .height(65.dp)
-        .padding(horizontal = 19.dp),
-        shape = RoundedCornerShape(5.dp),
-        Color.White
-    )
-    {
-        Box(modifier = Modifier.fillMaxSize())
-        {
-            Column(verticalArrangement = Arrangement.spacedBy(1.dp)) {
-                Text(
-                    text = dayText, modifier = Modifier
-                        .padding(top = 10.dp, start = 24.dp), fontSize = 20.sp
-                )
-
-                Text(
-                    text = exerciseText, modifier = Modifier
-                        .padding(start = 24.dp), fontSize = 15.sp
-                )
-            }
-
-            Button( modifier = Modifier
-                .align(Alignment.CenterEnd)
-                .height(21.dp)
-                .width(80.dp)
-                .padding(end = 16.dp),
-                shape = RoundedCornerShape(20.dp),
-                contentPadding = PaddingValues(0.dp),
-                colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFb2adef)),
-                onClick = { navController.navigate(route = NavRoute.Exercisep.route)}
-            ) {
-                Text(text = "Start",
-                    textAlign = TextAlign.Center
-                )
-            }
-        }
-    }
-}
-
-@Composable
-fun Day_box(
-    dayText : String,
-    exerciseText:String
-) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(65.dp)
-            .padding(horizontal = 19.dp),
-        shape = RoundedCornerShape(5.dp),
-        Color.White
-    )
-    {
-        Box(modifier = Modifier.fillMaxSize())
-        {
-            Column(verticalArrangement = Arrangement.spacedBy(1.dp)) {
-                Text(
-                    text = dayText, modifier = Modifier
-                        .padding(top = 10.dp, start = 24.dp), fontSize = 20.sp
-                )
-
-                Text(
-                    text = exerciseText, modifier = Modifier
-                        .padding(start = 24.dp), fontSize = 15.sp
-                )
-            }
-        }
-    }
-}
-
-@Composable
-fun Day_box_rest(
-    dayText : String,
-    exerciseText:String
-) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(65.dp)
-            .padding(horizontal = 19.dp),
-        shape = RoundedCornerShape(5.dp),
-        Color.White
-    )
-    {
-        Box(modifier = Modifier.fillMaxSize())
-        {
-            Column(verticalArrangement = Arrangement.spacedBy(1.dp)) {
-                Text(
-                    text = dayText, modifier = Modifier
-                        .padding(top = 10.dp, start = 24.dp), fontSize = 20.sp
-                )
-
-                Text(
-                    text = exerciseText, modifier = Modifier
-                        .padding(start = 24.dp), fontSize = 15.sp
-                )
-            }
-            Image(
-                painter = painterResource(id = R.drawable.rest),
-                contentDescription = "logo",
-                modifier = Modifier
-                    .size(35.dp)
-                    .padding(end = 19.dp)
-                    .align(alignment = Alignment.CenterEnd),
-
-                )
-        }
-    }
-}
 

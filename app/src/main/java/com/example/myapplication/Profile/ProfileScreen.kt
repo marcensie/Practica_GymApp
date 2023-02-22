@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.Profile
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -19,10 +19,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import com.example.myapplication.NavRoute
+import com.example.myapplication.Profile.components.Button_model
+import com.example.myapplication.Profile.components.ProfileBox
+import com.example.myapplication.Profile.components.topbar
+import com.example.myapplication.R
 
 
 @Composable
-fun Profilep(navController:NavController){
+fun ProfileScreen(navController:NavController){
     Column(
         modifier = Modifier
             .background(Color(0xFFE7E7E7))
@@ -44,7 +49,7 @@ fun Profilep(navController:NavController){
                     description = "My Profile Image",
                     text = "My Profile",
                     navController = navController,
-                    route = NavRoute.Bmip.route
+                    route = NavRoute.BMI_prof_Screen.route
                 )
                 //Spacer(modifier = Modifier.height(20.dp))
                 Button_model(
@@ -52,14 +57,14 @@ fun Profilep(navController:NavController){
                     description = "Reminder Icon",
                     text = "Reminder",
                     navController = navController,
-                    route = NavRoute.Bmip.route
+                    route = NavRoute.BMI_prof_Screen.route
                 )
 //                Button_model(
 //                    iconId = R.drawable.free_icon_notification_4991422,
 //                    description = "Reminder Icon",
 //                    text = "Reminder",
 //                    navController = navController,
-//                    route = NavRoute.Profilep.route
+//                    route = NavRoute.ProfileScreen.route
 //
 //                )
                 Button_model(
@@ -67,7 +72,7 @@ fun Profilep(navController:NavController){
                     description = "Rate Icon",
                     text = "Rate our App",
                     navController = navController,
-                    route = NavRoute.Bmip.route
+                    route = NavRoute.BMI_prof_Screen.route
 
                 )
                 Button_model(
@@ -75,7 +80,7 @@ fun Profilep(navController:NavController){
                     description = "Share Icon",
                     text = "Share our App",
                     navController = navController,
-                    route = NavRoute.Bmip.route
+                    route = NavRoute.BMI_prof_Screen.route
 
                 )
                 Button_model(
@@ -83,21 +88,21 @@ fun Profilep(navController:NavController){
                     description = "Contact Icon",
                     text = "Contact Us",
                     navController = navController,
-                    route = NavRoute.Bmip.route
+                    route = NavRoute.BMI_prof_Screen.route
                 )
                 Button_model(
                     iconId = R.drawable.privacy,
                     description = "Privacy Icon",
                     text = "Privacy Policy",
                     navController = navController,
-                    route = NavRoute.Bmip.route
+                    route = NavRoute.BMI_prof_Screen.route
                 )
                 Button_model(
                     iconId = R.drawable.info,
                     description = "Info Icon",
                     text = "About Us",
                     navController = navController,
-                    route = NavRoute.Choicep.route
+                    route = NavRoute.BMI_prof_Screen.route
                 )
                 Spacer(modifier = Modifier.height(10.dp))
             }
@@ -107,63 +112,3 @@ fun Profilep(navController:NavController){
 
 
 
-@Composable
-fun Button_model(iconId: Int,description:String,text: String,navController: NavController,route:String){
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 20.dp, start = 5.dp, end = 5.dp) ,
-        shape = RoundedCornerShape(10.dp),
-        elevation = 5.dp
-    ) {
-        Box(
-            modifier = Modifier
-                .height(55.dp)
-                .clickable(onClick = { navController.navigate(route = route)})
-        ){
-            Image(
-                painter = painterResource(id = iconId),
-                contentDescription = description,
-                modifier = Modifier
-                    .height(45.dp)
-                    .width(40.dp)
-                    .padding(top = 10.dp, start = 15.dp),
-            )
-            Text(
-                text = "$text",
-                color = Color.Black,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Normal,
-                modifier = Modifier.padding(start = 50.dp,top = 13.dp)
-            )
-        }
-    }
-}
-
-@Composable
-fun ProfileBox() {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(200.dp)
-            .padding(top = 20.dp, start = 5.dp, end = 5.dp) ,
-        shape = RoundedCornerShape(10.dp),
-        elevation = 5.dp
-    ) {
-        Column(
-            //verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.profile),
-                contentDescription = "User Box",
-                modifier = Modifier
-                    .height(120.dp)
-                    .width(130.dp)
-                    .padding(top = 10.dp)
-            )
-            Text("Hi,Name", fontSize = 30.sp,
-                modifier = Modifier.padding(top= 5.dp))
-        }
-    }
-}

@@ -1,4 +1,13 @@
-package com.example.myapplication
+package com.example.myapplication.Profile_BMI.components
+
+import android.graphics.Color
+
+enum class WeightStatus(val value: String, val color: Int) {
+    UNDERWEIGHT("Underweight", Color.BLACK),
+    HEALTHY_WEIGHT("Healthy Weight", Color.BLACK),
+    OVERWEIGHT("Overweight", Color.BLACK),
+    OBESITY("Obesity", Color.BLACK)
+}
 
 fun getWeightStatus(bmiValue: Double): WeightStatus {
     return when (bmiValue) {
@@ -18,3 +27,4 @@ fun calculateBMI(weight: Double, height: Double): Double {
     if (weight.equals(0.0) || height.equals(0.0)) return 0.0
     return weight/(height/100 * height/100)
 }
+
