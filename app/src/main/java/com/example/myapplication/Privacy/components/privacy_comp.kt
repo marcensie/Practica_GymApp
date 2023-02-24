@@ -19,35 +19,6 @@ import com.example.myapplication.NavRoute
 import com.example.myapplication.R
 
 @Composable
-fun MyProfilePageBarr(navController: NavController){
-    Surface(
-        modifier = Modifier.fillMaxWidth(),
-        color = Color.White,
-    ) {
-        Column() {
-            Box(
-                modifier = Modifier
-                    .height(60.dp)
-            ) {
-                val contextForToast = LocalContext.current.applicationContext
-
-                TopAppBar(
-                    backgroundColor = Color.White,
-                    title = { Text("")
-                    },
-                    navigationIcon = {
-                        IconButton(onClick = {navController.navigate(route = NavRoute.ProfileScreen.route)}){
-                            Icon(imageVector = Icons.Filled.ArrowBack,contentDescription = "")
-                        }
-                    },
-                    elevation = 10.dp
-
-                )
-            }
-        }
-    }
-}
-@Composable
 fun PPText(){
     Card(
         modifier = Modifier

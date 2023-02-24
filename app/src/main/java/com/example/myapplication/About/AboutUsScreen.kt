@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.example.myapplication.About.components.DeveloperBox
-import com.example.myapplication.About.components.MyProfilePageBarr
+import com.example.myapplication.GlobalComponents.MyProfilePageBarr
 
 
 @Composable

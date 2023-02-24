@@ -1,4 +1,4 @@
-package com.example.myapplication.Choice.components
+package com.example.myapplication.GlobalComponents
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -37,6 +37,8 @@ fun Topbar(navController: NavController) {
                     modifier = Modifier
                         .size(50.dp)
                         .padding(5.dp)
+                        .clickable(onClick = { navController.navigate(
+                            route = NavRoute.ChoiceScreen.route) })
                 )
                 Column() {
                     Text(

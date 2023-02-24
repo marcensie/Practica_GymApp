@@ -2,8 +2,8 @@ package com.example.myapplication.Profile_BMI
 
 import androidx.compose.runtime.*
 import androidx.navigation.NavController
+import com.example.myapplication.GlobalComponents.MyProfilePageBarr
 import com.example.myapplication.Profile_BMI.components.MainContent
-import com.example.myapplication.Profile_BMI.components.MyProfilePageBarr
 import com.example.myapplication.Profile_BMI.components.UpperText
 
 

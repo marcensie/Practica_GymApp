@@ -3,7 +3,7 @@ package com.example.myapplication.Shareapp
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
-import com.example.myapplication.Shareapp.components.MyProfilePageBarr
+import com.example.myapplication.GlobalComponents.MyProfilePageBarr
 import com.example.myapplication.Shareapp.components.ShareButton
 import com.example.myapplication.Shareapp.components.Textshare
 

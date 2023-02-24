@@ -4,8 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -16,39 +14,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import com.example.myapplication.NavRoute
 import com.example.myapplication.R
 
-@Composable
-fun MyProfilePageBarr(navController: NavController){
-    Surface(
-        modifier = Modifier.fillMaxWidth(),
-        color = Color.White,
-    ) {
-        Column() {
-            Box(
-                modifier = Modifier
-                    .height(60.dp)
-            ) {
-                val contextForToast = LocalContext.current.applicationContext
-
-                TopAppBar(
-                    backgroundColor = Color.White,
-                    title = { Text("")
-                    },
-                    navigationIcon = {
-                        IconButton(onClick = {navController.navigate(route = NavRoute.ProfileScreen.route)}){
-                            Icon(imageVector = Icons.Filled.ArrowBack,contentDescription = "")
-                        }
-                    },
-                    elevation = 10.dp
-
-                )
-            }
-        }
-    }
-}
 
 @Composable
 fun ThxText(){

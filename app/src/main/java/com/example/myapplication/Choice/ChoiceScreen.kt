@@ -14,8 +14,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import com.example.myapplication.NavRoute
 import com.example.myapplication.R
-import com.example.myapplication.Choice.components.Topbar
 import com.example.myapplication.Choice.components.Workout_type
+import com.example.myapplication.GlobalComponents.Topbar
 
 
 //@Preview (showBackground = true)

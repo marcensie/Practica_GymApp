@@ -7,11 +7,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.myapplication.GlobalComponents.Topbar
 import com.example.myapplication.NavRoute
 import com.example.myapplication.Profile.components.Button_model
 import com.example.myapplication.Profile.components.ProfileBox
 import com.example.myapplication.R
-import com.example.myapplication.Profile.components.Topbar
 
 
 @Composable

@@ -4,8 +4,8 @@ package com.example.myapplication.RateApp
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
+import com.example.myapplication.GlobalComponents.MyProfilePageBarr
 import com.example.myapplication.RateApp.components.Buttonrate
-import com.example.myapplication.RateApp.components.MyProfilePageBarr
 import com.example.myapplication.RateApp.components.ThxText
 
 

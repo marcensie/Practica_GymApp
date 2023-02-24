@@ -11,13 +11,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.myapplication.Choice.components.Globals
-import com.example.myapplication.Exercise.Components.Topbar
 import com.example.myapplication.R
 import com.example.myapplication.Fullbody.components.Day_box
 import com.example.myapplication.Fullbody.components.Day_box_rest
 import com.example.myapplication.Fullbody.components.Day_box_start
 import com.example.myapplication.Fullbody.components.Top_image
+import com.example.myapplication.GlobalComponents.Globals
+import com.example.myapplication.GlobalComponents.Topbar
 
 @Composable
 fun FullbodyScreen(navController: NavController) {
