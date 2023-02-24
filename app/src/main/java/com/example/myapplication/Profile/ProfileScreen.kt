@@ -47,20 +47,12 @@ fun ProfileScreen(navController:NavController){
                     navController = navController,
                     route = NavRoute.BMIprofScreen.route
                 )
-//                Button_model(
-//                    iconId = R.drawable.free_icon_notification_4991422,
-//                    description = "Reminder Icon",
-//                    text = "Reminder",
-//                    navController = navController,
-//                    route = NavRoute.ProfileScreen.route
-//
-//                )
                 Button_model(
                     iconId = R.drawable.star,
                     description = "Rate Icon",
                     text = "Rate our App",
                     navController = navController,
-                    route = NavRoute.BMIprofScreen.route
+                    route = NavRoute.RateAppScreen.route
 
                 )
                 Button_model(
@@ -68,7 +60,7 @@ fun ProfileScreen(navController:NavController){
                     description = "Share Icon",
                     text = "Share our App",
                     navController = navController,
-                    route = NavRoute.BMIprofScreen.route
+                    route = NavRoute.ShareAppScreen.route
 
                 )
                 Button_model(
@@ -76,21 +68,21 @@ fun ProfileScreen(navController:NavController){
                     description = "Contact Icon",
                     text = "Contact Us",
                     navController = navController,
-                    route = NavRoute.BMIprofScreen.route
+                    route = NavRoute.ContactUsScreen.route
                 )
                 Button_model(
                     iconId = R.drawable.privacy,
                     description = "Privacy Icon",
                     text = "Privacy Policy",
                     navController = navController,
-                    route = NavRoute.BMIprofScreen.route
+                    route = NavRoute.PrivacyPolicyScreen.route
                 )
                 Button_model(
                     iconId = R.drawable.info,
                     description = "Info Icon",
                     text = "About Us",
                     navController = navController,
-                    route = NavRoute.BMIprofScreen.route
+                    route = NavRoute.AboutUsScreen.route
                 )
                 Spacer(modifier = Modifier.height(10.dp))
             }
