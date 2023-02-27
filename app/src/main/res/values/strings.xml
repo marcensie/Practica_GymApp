@@ -30,7 +30,7 @@ This policy is effective as of 2023-02-23
         \nContact Us:\n
         If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at strongman@gmail.com.
     </string>
-    <string name = "git_link">https://github.com/marcensie/Practica_GymApp</string>
+    <string name="git_link">https://github.com/marcensie/Practica_GymApp</string>
     <string name="rate_app">Thank you for using our application.Hope you are enjoying it.If you wanna rate Us,press the button below and support our project. </string>
     <string name="share_app">Thank you very much for deciding to share our application. This means a lot to us. Thanks to this, you help us to develop and become better, thus making our application even better, so that you get even more pleasure from its use.</string>
     <string name="contact_us">If you encounter any problems in the process of using our application, or you have some recommendations that would make our application better, contact us</string>

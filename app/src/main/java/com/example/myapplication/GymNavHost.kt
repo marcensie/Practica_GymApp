@@ -27,12 +27,15 @@ sealed class NavRoute(val route: String){
     object ShareAppScreen:NavRoute("share_app_screen")
     object RateAppScreen:NavRoute("rate_app_screen")
     object PrivacyPolicyScreen:NavRoute("privacy_policy_screen")
+    object Loading_bar:NavRoute("Loading_bar")
+    object Select_Your:NavRoute("Select_Your")
+    object Your_BMI:NavRoute("Your_BMI")
 }
 
 @Composable
 fun GymNavHost (){
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = NavRoute.ChoiceScreen.route){
+    NavHost(navController = navController, startDestination = NavRoute.Loading_bar.route){
         composable(NavRoute.ChoiceScreen.route){ ChoiceScreen(navController = navController) }
         composable(NavRoute.ExerciseScreen.route){ ExerciseScreen(navController = navController)}
         composable(NavRoute.FullbodyScreen.route){ FullbodyScreen(navController = navController)}
@@ -43,5 +46,8 @@ fun GymNavHost (){
         composable(NavRoute.ShareAppScreen.route){ ShareAppScreen(navController = navController)}
         composable(NavRoute.RateAppScreen.route){ RateAppScreen(navController = navController)}
         composable(NavRoute.PrivacyPolicyScreen.route){ PrivacyPolicyScreen(navController = navController)}
+        composable(NavRoute.Loading_bar.route){ Loading_bar(navController = navController)}
+        composable(NavRoute.Select_Your.route){ Select_Your(navController = navController)}
+        composable(NavRoute.Your_BMI.route){ Your_BMI(navController = navController)}
     }
 }

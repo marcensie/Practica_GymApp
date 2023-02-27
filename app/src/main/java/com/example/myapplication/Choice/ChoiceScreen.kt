@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.myapplication.NavRoute
 import com.example.myapplication.R
@@ -25,7 +26,7 @@ import com.example.myapplication.GlobalComponents.Topbar
 //}
 
 @Composable
-fun ChoiceScreen(navController: NavHostController){
+fun ChoiceScreen(navController: NavController){
     Column(
         modifier =
         Modifier
